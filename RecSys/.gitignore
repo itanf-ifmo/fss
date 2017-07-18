@@ -1,0 +1,9 @@
+/.gradle
+/.idea
+/*.iml
+/build
+/gradle
+/gradlew
+/gradlew.bat
+/src/main/resources/hibernate.cfg.xml
+/Datasets/*.arff

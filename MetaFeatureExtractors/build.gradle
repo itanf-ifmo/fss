@@ -1,0 +1,8 @@
+group 'ru.ifmo.ctddev.FSSARecSys'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'nz.ac.waikato.cms.weka:weka-dev:3.7.13'
+    compile project(':Interfaces')
+}

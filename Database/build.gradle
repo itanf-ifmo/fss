@@ -1,0 +1,11 @@
+group 'ru.ifmo.ctddev.FSSARecSys'
+version '1.0-SNAPSHOT'
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.hibernate:hibernate-core:5.1.0.Final'
+    compile 'mysql:mysql-connector-java:5.1.16'
+    compile 'org.ektorp:org.ektorp:1.4.2'
+    compile 'org.slf4j:slf4j-simple:1.6.4'
+    compile project(':Interfaces')
+}

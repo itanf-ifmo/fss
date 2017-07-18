@@ -1,0 +1,43 @@
+subprojects {
+  apply plugin: "java"
+  apply plugin: 'idea'
+
+  repositories {
+    mavenCentral()
+  }
+
+  compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+    options.encoding = 'UTF-8'
+  }
+}
+
+subprojects.each { subproject -> evaluationDependsOn(subproject.path) }
+
+task allJar(type: Jar, dependsOn: subprojects.tasks["build"]) {
+  zip64 true
+  baseName = 'allJar'
+  subprojects.each { subproject ->
+    from subproject.configurations.archives.allArtifacts.files.collect {
+      zipTree(it)
+    }
+    subproject.configurations.runtime.allDependencies.collect {
+      from subproject.configurations.runtime.fileCollection(it).files.findAll {
+        it.getName().endsWith('.jar')
+      }.collect {
+        zipTree(it)
+      }
+    }
+  }
+}
+
+task upload(type: Exec, dependsOn: allJar) {
+  commandLine 'rsync'
+  args '-avpz ./allJar.jar sphinx:'.split(' ')
+
+  standardOutput = new ByteArrayOutputStream()
+  ext.output = {
+    return standardOutput.toString()
+  }
+}

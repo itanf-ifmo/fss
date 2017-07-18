@@ -1,0 +1,6 @@
+include ':Database'
+include ':Interfaces'
+include ':MetaFeatureExtractors'
+include ':RankAggregationLibrary'
+include ':RecSys'
+include ':WekaExtraLibs'

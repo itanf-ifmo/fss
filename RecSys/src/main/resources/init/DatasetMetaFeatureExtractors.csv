@@ -1,0 +1,13 @@
+ru.ifmo.ctddev.FSSARecSys.mfextraction.general.DataSetDimensionality
+ru.ifmo.ctddev.FSSARecSys.mfextraction.general.NumberOfClasses
+ru.ifmo.ctddev.FSSARecSys.mfextraction.general.NumberOfFeatures
+ru.ifmo.ctddev.FSSARecSys.mfextraction.general.NumberOfInstances
+ru.ifmo.ctddev.FSSARecSys.mfextraction.informationtheoretic.EquivalentNumberOfFeatures
+ru.ifmo.ctddev.FSSARecSys.mfextraction.informationtheoretic.MaxMutualInformation
+ru.ifmo.ctddev.FSSARecSys.mfextraction.informationtheoretic.MeanMutualInformation
+ru.ifmo.ctddev.FSSARecSys.mfextraction.informationtheoretic.MeanNormalizedFeatureEntropy
+ru.ifmo.ctddev.FSSARecSys.mfextraction.informationtheoretic.NoiseSignalRatio
+ru.ifmo.ctddev.FSSARecSys.mfextraction.informationtheoretic.NormalizedClassEntropy
+ru.ifmo.ctddev.FSSARecSys.mfextraction.statistical.MeanKurtosis
+ru.ifmo.ctddev.FSSARecSys.mfextraction.statistical.MeanLinearCorrelationCoefficient
+ru.ifmo.ctddev.FSSARecSys.mfextraction.statistical.MeanSkewness

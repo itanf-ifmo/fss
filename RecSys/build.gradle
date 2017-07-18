@@ -1,0 +1,48 @@
+group 'ru.ifmo.ctddev.FSSARecSys'
+version '1.0-SNAPSHOT'
+
+def urlFile = { url, name ->
+    File file = new File("$buildDir/download/${name}.jar")
+    file.parentFile.mkdirs()
+    if (!file.exists()) {
+        new URL(url).withInputStream { downloadStream ->
+            file.withOutputStream { fileOut ->
+                fileOut << downloadStream
+            }
+        }
+    }
+    files(file.absolutePath)
+}
+
+dependencies {
+    compile 'nz.ac.waikato.cms.weka:weka-dev:3.7.13'
+    compile 'nz.ac.waikato.cms.weka:tabuAndScatterSearch:1.0.2'
+    compile 'nz.ac.waikato.cms.weka:attributeSelectionSearchMethods:1.0.7'
+    compile 'nz.ac.waikato.cms.weka:linearForwardSelection:1.0.2'
+    compile 'nz.ac.waikato.cms.weka:consistencySubsetEval:1.0.4'
+    compile 'nz.ac.waikato.cms.weka:probabilisticSignificanceAE:1.0.2'
+    compile 'nz.ac.waikato.cms.weka:fastCorrBasedFS:1.0.2'
+    compile 'nz.ac.waikato.cms.weka:LibSVM:1.0.10'
+
+    compile 'org.apache.commons:commons-csv:1.1'
+
+//    compile ('ranklib:2.8') {
+//        artifact {
+//            name = 'ranklib'
+//            extension = 'jar'
+//            type = 'jar'
+//            url = ''
+//        }
+//    }
+
+    compile urlFile('https://netix.dl.sourceforge.net/project/lemur/lemur/RankLib-2.8/RankLib-2.8.jar', 'RankLib')
+//}
+
+    compile project(':Interfaces')
+    compile project(':Database')
+    compile project(':MetaFeatureExtractors')
+    compile project(':WekaExtraLibs')
+    compile project(':RankAggregationLibrary')
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}

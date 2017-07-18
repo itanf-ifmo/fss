@@ -1,0 +1,5 @@
+NaiveBayes,weka.classifiers.bayes.NaiveBayes,,classifier
+BayesNet,weka.classifiers.bayes.BayesNet,,classifier
+J48,weka.classifiers.trees.J48,,classifier
+PART,weka.classifiers.rules.PART,,classifier
+IBk,weka.classifiers.lazy.IBk,,classifier

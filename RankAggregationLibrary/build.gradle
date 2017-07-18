@@ -1,0 +1,13 @@
+group 'ru.ifmo.ctddev.FSSARecSys'
+version '1.0-SNAPSHOT'
+
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'ru.ifmo.ctddev.ral.Interface'
+    }
+}
